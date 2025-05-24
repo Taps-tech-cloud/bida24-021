@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomSnap Toys and Games - Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+        @import url('https://fonts.cdnfonts.com/css/poppins');
+
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff4500, #ffeb3b);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+
+        .snap-logo {
+            width: 60px;
+            height: auto;
+            margin-left: 0px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            animation: slideIn 1s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1.0rem;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+            transform: scale(1.1);
+        }
+
+        .search-container {
+            margin-top: 0.5rem;
+        }
+
+        .search-container input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Common Classes */
+        .shadow-rounded {
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            position: relative;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: 'ICA Rubrik', sans-serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: #ff4500;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideInFromLeft 0.5s ease-out;
+        }
+
+        /* Staggered animation delays for each item */
+        .contact-item:nth-child(1) { animation-delay: 0s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.4s; }
+        .contact-item:nth-child(4) { animation-delay: 0.6s; }
+        .contact-item:nth-child(5) { animation-delay: 0.8s; }
+
+        .contact-link {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-link:hover {
+            color: #ffcc00; /* Vibrant yellow on hover for contrast */
+        }
+
+        .contact-link i {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-link img {
+            width: 30px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .contact-link:hover i,
+        .contact-link:hover img {
+            transform: rotate(15deg);
+        }
+
+        .contact-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .contact-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background: linear-gradient(45deg, #ffeb3b, #ff4500);
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            animation: pulse 9s infinite;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #555;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.4; }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #ff4500, #030303);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .contact-info i,
+            .contact-info img {
+                font-size: 1.2rem;
+                width: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BOOM SNAP!! <img src="images/Screenshot_2025-04-16_092737-removebg-preview_upscaled.png" alt="Snap Logo" class="snap-logo"></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"class="active">Home</a></li>
+                <li><a href="categories.html"class="active">Categories</a></li>
+                <li><a href="about.html"class="active">About BoomSnap!!</a></li>
+                <li><a href="contact.html"class="active">Contact</a></li>
+                <li><a href="feedback.html"class="active">Feedback</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search games...">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-container">
+            <h1 class="contact-title">Get in Touch with BoomSnap!</h1>
+            <div class="contact-content">
+                <div class="contact-info shadow-rounded">
+                    <h2>Contact Us</h2>
+                    <p class="contact-item">
+                        <a href="tel:+26775142783" class="contact-link">
+                            <i class="fas fa-phone"></i> Phone: +26775142783
+                        </a>
+                    </p>
+                    <p class="contact-item">
+                        <a href="https://wa.me/26775142783" class="contact-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp: +26775142783
+                        </a>
+                    </p>
+                    <p class="contact-item">
+                        <a href="mailto:boomsnap62@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> Email: boomsnap62@gmail.com
+                        </a>
+                    </p>
+                    <p class="contact-item">
+                        <a href="https://web.facebook.com/people/BOOM-SNAP/100068611931586/" target="_blank" class="contact-link">
+                            <img src="images/6_Ways_to_Grow_Your_Facebook_Page_Audience-removebg-preview.png" alt="Facebook"> Facebook: BOOM SNAP
+                        </a>
+                    </p>
+                    <p class="contact-item">
+                        <a href="https://www.instagram.com/boom_snap1/" target="_blank" class="contact-link">
+                            <img src="images/instaaa-removebg-preview.png" alt="Instagram"> Instagram: boom_snap1
+                        </a>
+                    </p>
+                </div>
+                <div class="contact-image shadow-rounded">
+                    <img src="images/contact1.webp" alt="Contact us illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to Play?</h2>
+            <p>Reach out to us for any questions or explore our exciting range of games to start your next adventure!</p>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BoomSnap Toys and Games. All rights reserved.</p>
+    </footer>
+</body>
+</html>

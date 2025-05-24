@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,被://www.w3.org/1999/xhtml">
+    <title>BoomSnap Toys and Games - About</title>
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+        @import url('https://fonts.cdnfonts.com/css/poppins');
+
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #eb5400, #ffcc00);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling (consistent with other pages) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, #ffffff, #ffffff);
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+
+        .snap-logo {
+            width: 60px;
+            height: auto;
+            margin-left: 0px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            animation: slideIn 1s ease-out;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1.0rem;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        .search-container {
+            margin-top: 0.5rem;
+        }
+
+        .search-container input {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* About Section */
+        .about-container {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .about-title {
+            font-family: 'ICA Rubrik', sans-serif;
+            font-size: 3.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: #eb5400;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Discount Section */
+        .discount-section {
+            background: linear-gradient(45deg, #ffcc00, #eb5400);
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discount-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            animation: pulse 10s infinite;
+        }
+
+        .discount-section h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .discount-section p {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .discount-button {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .discount-button:hover {
+            background-color: #555;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .why-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease-out forwards;
+        }
+
+        .why-item:nth-child(2) { animation-delay: 0.2s; }
+        .why-item:nth-child(3) { animation-delay: 0.4s; }
+        .why-item:nth-child(4) { animation-delay: 0.6s; }
+
+        .why-item i {
+            font-size: 2.5rem;
+            color: #eb5400;
+            margin-bottom: 1rem;
+            animation: spin 2s infinite linear;
+        }
+
+        .why-item h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer (consistent with other pages) */
+        footer {
+            background: linear-gradient(to right, #eb5400, #030303);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+
+            .discount-section h2 {
+                font-size: 2rem;
+            }
+
+            .why-choose {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BOOM SNAP!! <img src="images/Screenshot_2025-04-16_092737-removebg-preview_upscaled.png" alt="Snap Logo" class="snap-logo"></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"class="active">Home</a></li>
+                <li><a href="categories.html"class="active">Categories</a></li>
+                <li><a href="about.html"class="active">About BoomSnap!!</a></li>
+                <li><a href="contact.html"class="active">Contact</a></li>
+                <li><a href="feedback.html"class="active">Feedback</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search games...">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-container">
+            <h1 class="about-title">About BoomSnap Toys and Games</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Welcome to the Fun!</h2>
+                    <p>At BoomSnap Toys and Games, we’re all about sparking joy, laughter, and connection. Founded with a passion for play, we bring you the best selection of board games, card games, and family-friendly activities that turn any gathering into a memorable adventure.</p>
+                    <p>Our mission? To create unforgettable moments of togetherness. Whether it’s a cozy family game night or a lively party with friends, our high-quality games are designed to entertain, challenge, and bring smiles to every face.</p>
+                    
+                </div>
+                <div class="about-image">
+                    <img src="images/WhatsApp Image 2025-01-16 at 06.47.00_5cd31057 (1).jpg" alt="Family playing games">
+                </div>
+            </div>
+        </section>
+
+        <section class="discount-section">
+            <h2>Exclusive Discounts Await!</h2>
+            <p>Love games? Stock up and save big! Buy 3-5 games and enjoy <strong>15% OFF</strong> your entire order. Purchase 6 or more for an incredible <strong>25% OFF</strong>! Plus, every order comes with a chance to win a <strong>free game</strong> in our monthly draw!</p>
+            
+        </section>
+
+        <section class="why-choose">
+            <div class="why-item">
+                <i class="fas fa-star"></i>
+                <h3>Premium Quality</h3>
+                <p>Our games are crafted for durability and endless fun, ensuring years of entertainment.</p>
+            </div>
+            <div class="why-item">
+                <i class="fas fa-users"></i>
+                <h3>Family Bonding</h3>
+                <p>Create lasting memories with games that bring everyone together, young and old.</p>
+            </div>
+            <div class="why-item">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Shipping</h3>
+                <p>Get your games delivered quickly with our reliable nationwide service.</p>
+            </div>
+            <div class="why-item">
+                <i class="fas fa-headset"></i>
+                <h3>Top-Notch Support</h3>
+                <p>Our friendly team is here to help you find the perfect game, anytime.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BoomSnap Toys and Games. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
