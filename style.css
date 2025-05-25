@@ -783,36 +783,3 @@ button.buy-now-btn:hover {
     from { opacity: 1; }
     to { opacity: 0; }
 }
-
-/* Additional media query for enhanced mobile responsiveness */
-@media (max-width: 576px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    nav ul li a {
-        font-size: 1rem;
-    }
-    .search-container input {
-        font-size: 0.9rem;
-    }
-    .banner .slider {
-        width: 120px;
-        height: 150px;
-        left: calc(50% - 60px);
-    }
-    .banner .slider .item {
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(180px);
-    }
-    .shop-now-button, .comment-button, button {
-        padding: 0.5rem 1.5rem;
-        font-size: 1rem;
-    }
-    .product-item h3 {
-        font-size: 1.2rem;
-    }
-    .testimonial p {
-        font-size: 0.9rem;
-    }
-}
