@@ -176,7 +176,7 @@
         }
 
         .contact-link:hover {
-            color: #ffcc00;
+            color: #ffcc00; /* Vibrant yellow on hover for contrast */
         }
 
         .contact-link i {
@@ -326,35 +326,47 @@
                 width: 25px;
             }
 
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                align-items: center;
+            }
+
             nav ul {
                 flex-direction: column;
-                align-items: flex-end;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .search-container {
+                width: 100%;
+                text-align: center;
             }
 
             .search-container input {
-                width: 100%;
+                width: 80%;
             }
         }
 
         @media (max-width: 480px) {
-            header {
-                padding: 0.5rem;
-            }
-
             header h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .snap-logo {
                 width: 40px;
             }
 
-            main {
-                padding: 0 1rem;
-            }
-
-            .contact-container {
-                padding: 2rem 0;
+            nav ul li a {
+                font-size: 1rem;
             }
 
             .contact-title {
@@ -369,10 +381,6 @@
                 font-size: 1rem;
             }
 
-            .cta-section {
-                padding: 2rem;
-            }
-
             .cta-section h2 {
                 font-size: 1.5rem;
             }
@@ -381,13 +389,18 @@
                 font-size: 1rem;
             }
 
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
+            .contact-link i,
+            .contact-link img {
+                font-size: 1.2rem;
+                width: 20px;
             }
 
-            .contact-image {
-                display: none;
+            .contact-info {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 0 1rem;
             }
         }
     </style>
@@ -450,7 +463,6 @@
         <section class="cta-section">
             <h2>Ready to Play?</h2>
             <p>Reach out to us for any questions or explore our exciting range of games to start your next adventure!</p>
-            <a href="categories.html" class="cta-button">Shop Now</a>
         </section>
     </main>
 
