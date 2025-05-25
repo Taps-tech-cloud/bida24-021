@@ -29,12 +29,14 @@ header {
     z-index: 1000;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: slideIn 1s ease-out;
-}
+ header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
 
 .snap-logo {
     width: 60px;
