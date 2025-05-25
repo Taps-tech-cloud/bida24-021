@@ -366,6 +366,60 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav ul li a {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .search-container input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    section {
+        padding: 1rem;
+    }
+    .banner {
+        height: 40vh;
+    }
+    .banner .slider {
+        width: 100px;
+        height: 125px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item {
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(150px);
+    }
+    .banner .content h1 {
+        font-size: 3em;
+    }
+    .banner .content .author {
+        font-size: 0.8rem;
+    }
+    button, .buy-now-btn, .checkout-btn, .clear-cart-btn {
+        min-height: 40px;
+        font-size: 1rem;
+    }
+    #checkout {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    .testimonial-img {
+        width: 40px;
+        height: 40px;
+    }
+    .testimonial p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Slideshow Styles */
 .banner {
     width: 100%;
